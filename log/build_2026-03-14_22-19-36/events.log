@@ -1,0 +1,23 @@
+[0.000000] (-) TimerEvent: {}
+[0.000398] (robonex_ai) JobQueued: {'identifier': 'robonex_ai', 'dependencies': OrderedDict()}
+[0.000758] (robonex_hardware) JobQueued: {'identifier': 'robonex_hardware', 'dependencies': OrderedDict()}
+[0.000806] (robonex_ai) JobStarted: {'identifier': 'robonex_ai'}
+[0.015524] (robonex_hardware) JobStarted: {'identifier': 'robonex_hardware'}
+[0.099701] (-) TimerEvent: {}
+[0.200006] (-) TimerEvent: {}
+[0.300287] (-) TimerEvent: {}
+[0.400546] (-) TimerEvent: {}
+[0.500832] (-) TimerEvent: {}
+[0.601115] (-) TimerEvent: {}
+[0.701355] (-) TimerEvent: {}
+[0.801672] (-) TimerEvent: {}
+[0.901934] (-) TimerEvent: {}
+[1.002236] (-) TimerEvent: {}
+[1.102548] (-) TimerEvent: {}
+[1.202833] (-) TimerEvent: {}
+[1.303113] (-) TimerEvent: {}
+[1.403793] (-) TimerEvent: {}
+[1.451969] (robonex_ai) StderrLine: {'line': b'Traceback (most recent call last):\n  File "/usr/lib/python3/dist-packages/colcon_parallel_executor/executor/parallel.py", line 75, in execute\n    loop.run_until_complete(future)\n  File "/usr/lib/python3.12/asyncio/base_events.py", line 674, in run_until_complete\n    self.run_forever()\n  File "/usr/lib/python3.12/asyncio/base_events.py", line 641, in run_forever\n    self._run_once()\n  File "/usr/lib/python3.12/asyncio/base_events.py", line 1949, in _run_once\n    event_list = self._selector.select(timeout)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/usr/lib/python3.12/selectors.py", line 468, in select\n    fd_event_list = self._selector.poll(timeout, max_ev)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyboardInterrupt\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/usr/lib/python3/dist-packages/colcon_core/executor/__init__.py", line 91, in __call__\n    rc = await self.task(*args, **kwargs)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/usr/lib/python3/dist-packages/colcon_core/task/__init__.py", line 93, in __call__\n    return await task_method(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/usr/lib/python3/dist-packages/colcon_ros/task/ament_python/build.py", line 102, in build\n    return await extension.build(additional_hooks=additional_hooks)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/usr/lib/python3/dist-packages/colcon_core/task/python/build.py", line 96, in build\n    available_commands = await self._get_available_commands(\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/usr/lib/python3/dist-packages/colcon_core/task/python/build.py", line 194, in _get_available_commands\n    output = await check_output(\n             ^^^^^^^^^^^^^^^^^^^\n  File "/usr/lib/python3/dist-packages/colcon_core/subprocess.py", line 129, in check_output\n    assert not rc, f\'Expected {args} to pass: {stderr_data}\'\n           ^^^^^^\nAssertionError: Expected [\'/usr/bin/python3\', \'-W\', \'ignore:setup.py install is deprecated\', \'-W\', \'ignore:easy_install command is deprecated\', \'setup.py\', \'--help-commands\'] to pass: \n'}
+[1.452538] (robonex_ai) JobEnded: {'identifier': 'robonex_ai', 'rc': 'SIGINT'}
+[1.453087] (robonex_hardware) JobEnded: {'identifier': 'robonex_hardware', 'rc': 'SIGINT'}
+[1.462787] (-) EventReactorShutdown: {}

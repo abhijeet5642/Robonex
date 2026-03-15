@@ -1,0 +1,21 @@
+[1.893s] Invoking command in '/home/abhinav/Desktop/roboControl/src/robonex_hardware': PYTHONPATH=/home/abhinav/Desktop/roboControl/build/robonex_hardware/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/abhinav/Desktop/roboControl/install/robonex_hardware/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robonex_hardware build --build-base /home/abhinav/Desktop/roboControl/build/robonex_hardware/build install --record /home/abhinav/Desktop/roboControl/build/robonex_hardware/install.log --single-version-externally-managed install_data
+[2.444s] running egg_info
+[2.476s] writing ../../build/robonex_hardware/robonex_hardware.egg-info/PKG-INFO
+[2.477s] writing dependency_links to ../../build/robonex_hardware/robonex_hardware.egg-info/dependency_links.txt
+[2.477s] writing entry points to ../../build/robonex_hardware/robonex_hardware.egg-info/entry_points.txt
+[2.477s] writing requirements to ../../build/robonex_hardware/robonex_hardware.egg-info/requires.txt
+[2.477s] writing top-level names to ../../build/robonex_hardware/robonex_hardware.egg-info/top_level.txt
+[2.556s] reading manifest file '../../build/robonex_hardware/robonex_hardware.egg-info/SOURCES.txt'
+[2.558s] writing manifest file '../../build/robonex_hardware/robonex_hardware.egg-info/SOURCES.txt'
+[2.559s] running build
+[2.559s] running build_py
+[2.559s] running install
+[2.570s] running install_lib
+[2.605s] running install_data
+[2.605s] running install_egg_info
+[2.650s] removing '/home/abhinav/Desktop/roboControl/install/robonex_hardware/lib/python3.12/site-packages/robonex_hardware-0.0.0-py3.12.egg-info' (and everything under it)
+[2.650s] Copying ../../build/robonex_hardware/robonex_hardware.egg-info to /home/abhinav/Desktop/roboControl/install/robonex_hardware/lib/python3.12/site-packages/robonex_hardware-0.0.0-py3.12.egg-info
+[2.653s] running install_scripts
+[2.937s] Installing robot_hardware script to /home/abhinav/Desktop/roboControl/install/robonex_hardware/lib/robonex_hardware
+[2.940s] writing list of installed files to '/home/abhinav/Desktop/roboControl/build/robonex_hardware/install.log'
+[2.987s] Invoked command in '/home/abhinav/Desktop/roboControl/src/robonex_hardware' returned '0': PYTHONPATH=/home/abhinav/Desktop/roboControl/build/robonex_hardware/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/abhinav/Desktop/roboControl/install/robonex_hardware/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robonex_hardware build --build-base /home/abhinav/Desktop/roboControl/build/robonex_hardware/build install --record /home/abhinav/Desktop/roboControl/build/robonex_hardware/install.log --single-version-externally-managed install_data

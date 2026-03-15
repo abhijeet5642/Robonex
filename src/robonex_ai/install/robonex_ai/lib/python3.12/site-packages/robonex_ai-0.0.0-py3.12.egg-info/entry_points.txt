@@ -1,0 +1,2 @@
+[console_scripts]
+ai_server = robonex_ai.ai_node:main

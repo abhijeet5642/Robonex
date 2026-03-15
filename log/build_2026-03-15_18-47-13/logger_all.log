@@ -1,0 +1,192 @@
+[0.269s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.269s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7b67e7998620>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7b67e7998110>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7b67e7998110>>, mixin_verb=('build',))
+[0.361s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.361s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.361s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.361s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.361s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.361s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.362s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/abhinav/Desktop/roboControl'
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.362s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.395s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.395s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(backup) by extensions ['ignore', 'ignore_ament_install']
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(backup) by extension 'ignore'
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(backup) by extension 'ignore_ament_install'
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(backup) by extensions ['colcon_pkg']
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(backup) by extension 'colcon_pkg'
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(backup) by extensions ['colcon_meta']
+[0.396s] Level 1:colcon.colcon_core.package_identification:_identify(backup) by extension 'colcon_meta'
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(backup) by extensions ['ros']
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(backup) by extension 'ros'
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(backup) by extensions ['cmake', 'python']
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(backup) by extension 'cmake'
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(backup) by extension 'python'
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(backup) by extensions ['python_setup_py']
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(backup) by extension 'python_setup_py'
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.397s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.398s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.399s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.400s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.400s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.400s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_ai) by extensions ['ignore', 'ignore_ament_install']
+[0.400s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_ai) by extension 'ignore'
+[0.400s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_ai) by extension 'ignore_ament_install'
+[0.400s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_ai) by extensions ['colcon_pkg']
+[0.400s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_ai) by extension 'colcon_pkg'
+[0.400s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_ai) by extensions ['colcon_meta']
+[0.400s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_ai) by extension 'colcon_meta'
+[0.400s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_ai) by extensions ['ros']
+[0.400s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_ai) by extension 'ros'
+[0.403s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robonex_ai' with type 'ros.ament_python' and name 'robonex_ai'
+[0.404s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_hardware) by extensions ['ignore', 'ignore_ament_install']
+[0.404s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_hardware) by extension 'ignore'
+[0.404s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_hardware) by extension 'ignore_ament_install'
+[0.404s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_hardware) by extensions ['colcon_pkg']
+[0.404s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_hardware) by extension 'colcon_pkg'
+[0.404s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_hardware) by extensions ['colcon_meta']
+[0.404s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_hardware) by extension 'colcon_meta'
+[0.404s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_hardware) by extensions ['ros']
+[0.404s] Level 1:colcon.colcon_core.package_identification:_identify(src/robonex_hardware) by extension 'ros'
+[0.405s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robonex_hardware' with type 'ros.ament_python' and name 'robonex_hardware'
+[0.405s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.405s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.405s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.405s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.405s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.426s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.426s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.428s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/abhinav/Desktop/roboControl/install
+[0.429s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 286 installed packages in /opt/ros/jazzy
+[0.431s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.482s] Level 5:colcon.colcon_core.verb:set package 'robonex_ai' build argument 'cmake_args' from command line to 'None'
+[0.482s] Level 5:colcon.colcon_core.verb:set package 'robonex_ai' build argument 'cmake_target' from command line to 'None'
+[0.482s] Level 5:colcon.colcon_core.verb:set package 'robonex_ai' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.482s] Level 5:colcon.colcon_core.verb:set package 'robonex_ai' build argument 'cmake_clean_cache' from command line to 'False'
+[0.482s] Level 5:colcon.colcon_core.verb:set package 'robonex_ai' build argument 'cmake_clean_first' from command line to 'False'
+[0.482s] Level 5:colcon.colcon_core.verb:set package 'robonex_ai' build argument 'cmake_force_configure' from command line to 'False'
+[0.482s] Level 5:colcon.colcon_core.verb:set package 'robonex_ai' build argument 'ament_cmake_args' from command line to 'None'
+[0.482s] Level 5:colcon.colcon_core.verb:set package 'robonex_ai' build argument 'catkin_cmake_args' from command line to 'None'
+[0.482s] Level 5:colcon.colcon_core.verb:set package 'robonex_ai' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.483s] DEBUG:colcon.colcon_core.verb:Building package 'robonex_ai' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/abhinav/Desktop/roboControl/build/robonex_ai', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/abhinav/Desktop/roboControl/install/robonex_ai', 'merge_install': False, 'path': '/home/abhinav/Desktop/roboControl/src/robonex_ai', 'symlink_install': False, 'test_result_base': None}
+[0.483s] Level 5:colcon.colcon_core.verb:set package 'robonex_hardware' build argument 'cmake_args' from command line to 'None'
+[0.483s] Level 5:colcon.colcon_core.verb:set package 'robonex_hardware' build argument 'cmake_target' from command line to 'None'
+[0.483s] Level 5:colcon.colcon_core.verb:set package 'robonex_hardware' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.483s] Level 5:colcon.colcon_core.verb:set package 'robonex_hardware' build argument 'cmake_clean_cache' from command line to 'False'
+[0.483s] Level 5:colcon.colcon_core.verb:set package 'robonex_hardware' build argument 'cmake_clean_first' from command line to 'False'
+[0.483s] Level 5:colcon.colcon_core.verb:set package 'robonex_hardware' build argument 'cmake_force_configure' from command line to 'False'
+[0.483s] Level 5:colcon.colcon_core.verb:set package 'robonex_hardware' build argument 'ament_cmake_args' from command line to 'None'
+[0.483s] Level 5:colcon.colcon_core.verb:set package 'robonex_hardware' build argument 'catkin_cmake_args' from command line to 'None'
+[0.483s] Level 5:colcon.colcon_core.verb:set package 'robonex_hardware' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.483s] DEBUG:colcon.colcon_core.verb:Building package 'robonex_hardware' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/abhinav/Desktop/roboControl/build/robonex_hardware', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/abhinav/Desktop/roboControl/install/robonex_hardware', 'merge_install': False, 'path': '/home/abhinav/Desktop/roboControl/src/robonex_hardware', 'symlink_install': False, 'test_result_base': None}
+[0.483s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.485s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.485s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/abhinav/Desktop/roboControl/src/robonex_ai' with build type 'ament_python'
+[0.485s] Level 1:colcon.colcon_core.shell:create_environment_hook('robonex_ai', 'ament_prefix_path')
+[0.487s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.487s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/abhinav/Desktop/roboControl/install/robonex_ai/share/robonex_ai/hook/ament_prefix_path.ps1'
+[0.488s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/abhinav/Desktop/roboControl/install/robonex_ai/share/robonex_ai/hook/ament_prefix_path.dsv'
+[0.488s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/abhinav/Desktop/roboControl/install/robonex_ai/share/robonex_ai/hook/ament_prefix_path.sh'
+[0.489s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.489s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.493s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/abhinav/Desktop/roboControl/src/robonex_hardware' with build type 'ament_python'
+[0.494s] Level 1:colcon.colcon_core.shell:create_environment_hook('robonex_hardware', 'ament_prefix_path')
+[0.494s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/abhinav/Desktop/roboControl/install/robonex_hardware/share/robonex_hardware/hook/ament_prefix_path.ps1'
+[0.495s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/abhinav/Desktop/roboControl/install/robonex_hardware/share/robonex_hardware/hook/ament_prefix_path.dsv'
+[0.496s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/abhinav/Desktop/roboControl/install/robonex_hardware/share/robonex_hardware/hook/ament_prefix_path.sh'
+[0.496s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.496s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.808s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/abhinav/Desktop/roboControl/src/robonex_ai'
+[0.809s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.809s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.130s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/abhinav/Desktop/roboControl/src/robonex_hardware'
+[1.130s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.130s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.977s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/abhinav/Desktop/roboControl/src/robonex_ai': PYTHONPATH=/home/abhinav/Desktop/roboControl/build/robonex_ai/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/abhinav/Desktop/roboControl/install/robonex_ai/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robonex_ai build --build-base /home/abhinav/Desktop/roboControl/build/robonex_ai/build install --record /home/abhinav/Desktop/roboControl/build/robonex_ai/install.log --single-version-externally-managed install_data
+[1.984s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/abhinav/Desktop/roboControl/src/robonex_hardware': PYTHONPATH=/home/abhinav/Desktop/roboControl/build/robonex_hardware/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/abhinav/Desktop/roboControl/install/robonex_hardware/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robonex_hardware build --build-base /home/abhinav/Desktop/roboControl/build/robonex_hardware/build install --record /home/abhinav/Desktop/roboControl/build/robonex_hardware/install.log --single-version-externally-managed install_data
+[2.809s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/abhinav/Desktop/roboControl/src/robonex_ai' returned '0': PYTHONPATH=/home/abhinav/Desktop/roboControl/build/robonex_ai/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/abhinav/Desktop/roboControl/install/robonex_ai/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robonex_ai build --build-base /home/abhinav/Desktop/roboControl/build/robonex_ai/build install --record /home/abhinav/Desktop/roboControl/build/robonex_ai/install.log --single-version-externally-managed install_data
+[2.812s] Level 1:colcon.colcon_core.environment:checking '/home/abhinav/Desktop/roboControl/install/robonex_ai' for CMake module files
+[2.813s] Level 1:colcon.colcon_core.environment:checking '/home/abhinav/Desktop/roboControl/install/robonex_ai' for CMake config files
+[2.814s] Level 1:colcon.colcon_core.environment:checking '/home/abhinav/Desktop/roboControl/install/robonex_ai/lib'
+[2.815s] Level 1:colcon.colcon_core.environment:checking '/home/abhinav/Desktop/roboControl/install/robonex_ai/bin'
+[2.815s] Level 1:colcon.colcon_core.environment:checking '/home/abhinav/Desktop/roboControl/install/robonex_ai/lib/pkgconfig/robonex_ai.pc'
+[2.815s] Level 1:colcon.colcon_core.environment:checking '/home/abhinav/Desktop/roboControl/install/robonex_ai/lib/python3.12/site-packages'
+[2.816s] Level 1:colcon.colcon_core.shell:create_environment_hook('robonex_ai', 'pythonpath')
+[2.816s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/abhinav/Desktop/roboControl/install/robonex_ai/share/robonex_ai/hook/pythonpath.ps1'
+[2.817s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/abhinav/Desktop/roboControl/install/robonex_ai/share/robonex_ai/hook/pythonpath.dsv'
+[2.817s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/abhinav/Desktop/roboControl/install/robonex_ai/share/robonex_ai/hook/pythonpath.sh'
+[2.819s] Level 1:colcon.colcon_core.environment:checking '/home/abhinav/Desktop/roboControl/install/robonex_ai/bin'
+[2.820s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robonex_ai)
+[2.821s] INFO:colcon.colcon_core.shell:Creating package script '/home/abhinav/Desktop/roboControl/install/robonex_ai/share/robonex_ai/package.ps1'
+[2.822s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/abhinav/Desktop/roboControl/install/robonex_ai/share/robonex_ai/package.dsv'
+[2.824s] INFO:colcon.colcon_core.shell:Creating package script '/home/abhinav/Desktop/roboControl/install/robonex_ai/share/robonex_ai/package.sh'
+[2.825s] INFO:colcon.colcon_core.shell:Creating package script '/home/abhinav/Desktop/roboControl/install/robonex_ai/share/robonex_ai/package.bash'
+[2.826s] INFO:colcon.colcon_core.shell:Creating package script '/home/abhinav/Desktop/roboControl/install/robonex_ai/share/robonex_ai/package.zsh'
+[2.827s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/abhinav/Desktop/roboControl/install/robonex_ai/share/colcon-core/packages/robonex_ai)
+[2.829s] Level 1:colcon.colcon_core.environment:checking '/home/abhinav/Desktop/roboControl/install/robonex_hardware' for CMake module files
+[2.830s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/abhinav/Desktop/roboControl/src/robonex_hardware' returned '0': PYTHONPATH=/home/abhinav/Desktop/roboControl/build/robonex_hardware/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/abhinav/Desktop/roboControl/install/robonex_hardware/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robonex_hardware build --build-base /home/abhinav/Desktop/roboControl/build/robonex_hardware/build install --record /home/abhinav/Desktop/roboControl/build/robonex_hardware/install.log --single-version-externally-managed install_data
+[2.830s] Level 1:colcon.colcon_core.environment:checking '/home/abhinav/Desktop/roboControl/install/robonex_hardware' for CMake config files
+[2.831s] Level 1:colcon.colcon_core.environment:checking '/home/abhinav/Desktop/roboControl/install/robonex_hardware/lib'
+[2.831s] Level 1:colcon.colcon_core.environment:checking '/home/abhinav/Desktop/roboControl/install/robonex_hardware/bin'
+[2.832s] Level 1:colcon.colcon_core.environment:checking '/home/abhinav/Desktop/roboControl/install/robonex_hardware/lib/pkgconfig/robonex_hardware.pc'
+[2.832s] Level 1:colcon.colcon_core.environment:checking '/home/abhinav/Desktop/roboControl/install/robonex_hardware/lib/python3.12/site-packages'
+[2.832s] Level 1:colcon.colcon_core.shell:create_environment_hook('robonex_hardware', 'pythonpath')
+[2.833s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/abhinav/Desktop/roboControl/install/robonex_hardware/share/robonex_hardware/hook/pythonpath.ps1'
+[2.833s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/abhinav/Desktop/roboControl/install/robonex_hardware/share/robonex_hardware/hook/pythonpath.dsv'
+[2.834s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/abhinav/Desktop/roboControl/install/robonex_hardware/share/robonex_hardware/hook/pythonpath.sh'
+[2.836s] Level 1:colcon.colcon_core.environment:checking '/home/abhinav/Desktop/roboControl/install/robonex_hardware/bin'
+[2.836s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robonex_hardware)
+[2.837s] INFO:colcon.colcon_core.shell:Creating package script '/home/abhinav/Desktop/roboControl/install/robonex_hardware/share/robonex_hardware/package.ps1'
+[2.838s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/abhinav/Desktop/roboControl/install/robonex_hardware/share/robonex_hardware/package.dsv'
+[2.839s] INFO:colcon.colcon_core.shell:Creating package script '/home/abhinav/Desktop/roboControl/install/robonex_hardware/share/robonex_hardware/package.sh'
+[2.839s] INFO:colcon.colcon_core.shell:Creating package script '/home/abhinav/Desktop/roboControl/install/robonex_hardware/share/robonex_hardware/package.bash'
+[2.840s] INFO:colcon.colcon_core.shell:Creating package script '/home/abhinav/Desktop/roboControl/install/robonex_hardware/share/robonex_hardware/package.zsh'
+[2.840s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/abhinav/Desktop/roboControl/install/robonex_hardware/share/colcon-core/packages/robonex_hardware)
+[2.841s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.842s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.842s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[2.843s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.853s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[2.853s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.854s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.854s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.857s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.857s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/abhinav/Desktop/roboControl/install/local_setup.ps1'
+[2.859s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/abhinav/Desktop/roboControl/install/_local_setup_util_ps1.py'
+[2.861s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/abhinav/Desktop/roboControl/install/setup.ps1'
+[2.863s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/abhinav/Desktop/roboControl/install/local_setup.sh'
+[2.864s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/abhinav/Desktop/roboControl/install/_local_setup_util_sh.py'
+[2.866s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/abhinav/Desktop/roboControl/install/setup.sh'
+[2.869s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/abhinav/Desktop/roboControl/install/local_setup.bash'
+[2.871s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/abhinav/Desktop/roboControl/install/setup.bash'
+[2.873s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/abhinav/Desktop/roboControl/install/local_setup.zsh'
+[2.875s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/abhinav/Desktop/roboControl/install/setup.zsh'

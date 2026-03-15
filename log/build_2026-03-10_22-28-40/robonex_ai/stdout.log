@@ -1,0 +1,19 @@
+running egg_info
+writing ../../build/robonex_ai/robonex_ai.egg-info/PKG-INFO
+writing dependency_links to ../../build/robonex_ai/robonex_ai.egg-info/dependency_links.txt
+writing entry points to ../../build/robonex_ai/robonex_ai.egg-info/entry_points.txt
+writing requirements to ../../build/robonex_ai/robonex_ai.egg-info/requires.txt
+writing top-level names to ../../build/robonex_ai/robonex_ai.egg-info/top_level.txt
+reading manifest file '../../build/robonex_ai/robonex_ai.egg-info/SOURCES.txt'
+writing manifest file '../../build/robonex_ai/robonex_ai.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/abhinav/Desktop/roboControl/install/robonex_ai/lib/python3.12/site-packages/robonex_ai-0.0.0-py3.12.egg-info' (and everything under it)
+Copying ../../build/robonex_ai/robonex_ai.egg-info to /home/abhinav/Desktop/roboControl/install/robonex_ai/lib/python3.12/site-packages/robonex_ai-0.0.0-py3.12.egg-info
+running install_scripts
+Installing ai_server script to /home/abhinav/Desktop/roboControl/install/robonex_ai/lib/robonex_ai
+writing list of installed files to '/home/abhinav/Desktop/roboControl/build/robonex_ai/install.log'

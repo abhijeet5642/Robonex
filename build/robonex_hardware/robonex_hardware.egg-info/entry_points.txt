@@ -1,0 +1,2 @@
+[console_scripts]
+robot_hardware = robonex_hardware.hardware_node:main

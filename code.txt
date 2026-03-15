@@ -1,0 +1,312 @@
+import time
+
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+from fastapi import FastAPI
+import uvicorn
+import threading
+import os
+import json
+import asyncio
+from openai import AsyncOpenAI
+from dotenv import load_dotenv
+from pydantic import BaseModel, Field
+
+# ==========================================
+# LLM SETUP & MODELS
+# ==========================================
+load_dotenv()
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY") 
+
+client = AsyncOpenAI(
+    api_key=OPENROUTER_API_KEY,
+    base_url="https://openrouter.ai/api/v1"
+)
+
+class CommandRequest(BaseModel):
+    text: str
+
+class LLMCommand(BaseModel):
+    x: float = Field(default=0.0, ge=-1.0, le=1.0) 
+    y: float = Field(default=0.0, ge=-1.0, le=1.0)
+    yaw: float = Field(default=0.0, ge=-1.0, le=1.0)
+    stance: str = Field(default="stand")
+    gait: str = Field(default="walk")
+    speed: str = Field(default="slow")
+    mode: str = Field(default="ACTIVE")
+
+# ==========================================
+# ROS 2 NODE (THE PUBLISHER)
+# ==========================================
+class AINode(Node):
+    def __init__(self):
+        super().__init__('ai_node')
+        # 🟢 CHANGED: Publishing a String to a new topic called 'robot_commands'
+        self.publisher_ = self.create_publisher(String, 'robot_commands', 10)
+        self.get_logger().info("AI Node & FastAPI Server Started!")
+
+    def publish_movement(self, state_dict):
+        msg = String()
+        # 🟢 CHANGED: Convert the Python dictionary into a JSON string
+        msg.data = json.dumps(state_dict) 
+        self.publisher_.publish(msg)
+        self.get_logger().info(f"📡 Published to ROS: {msg.data}")
+
+# ==========================================
+# FASTAPI SERVER
+# ==========================================
+app = FastAPI()
+ros_node = None
+
+# 🧠 Global memory to track the last known state
+current_robot_state = {
+    "x": 0.0, "y": 0.0, "yaw": 0.0, 
+    "speed": "slow", "gait": "walk", "stance": "stand", "mode": "ACTIVE"
+}
+
+@app.post("/command")
+async def receive_command(request: CommandRequest):
+    global current_robot_state
+    text_command = request.text.strip()
+    print(f"🗣️ User Said: '{text_command}'")
+
+    system_rules = """
+You are a quadruped robot controller. Your job is to interpret natural conversational language and convert the user's intent into a specific JSON state. Only return raw JSON.
+
+REQUIRED JSON KEYS:
+"x" (float: -1.0 to 1.0), "y" (float: -1.0 to 1.0), "yaw" (float: -1.0 to 1.0),
+"mode" ("ACTIVE" or "SLEEP"),
+"stance" ("stand" or "sit"),
+"gait" ("walk", "trot", "crawl"),
+"speed" ("slow", "medium", "fast").
+
+DIRECTION & AXIS MAPPING (-1.0 to 1.0):
+
+x axis (forward/backward movement)
+- "move forward", "go forward", "walk ahead" → x = 1.0
+- "move backward", "go back" → x = -1.0
+
+y axis (side movement / strafing)
+- "move right", "strafe right" → y = 1.0
+- "move left", "strafe left" → y = -1.0
+
+yaw axis (rotation)
+- "turn right", "rotate right" → yaw = 1.0
+- "turn left", "rotate left" → yaw = -1.0
+
+
+RULE 1: NEW MOVEMENT COMMANDS (STRICT RESET)
+
+When the user gives a NEW direction command
+(e.g., "move forward", "move left", "turn right", "move right", "move backward"):
+
+CRITICAL BEHAVIOR:
+
+1. Completely RESET previous motion values.
+2. Set ONLY the requested axis.
+3. FORCE the other two axes to 0.0.
+4. NEVER mix axes from previous history.
+
+Examples:
+
+move forward → x=1.0 y=0.0 yaw=0.0  
+move backward → x=-1.0 y=0.0 yaw=0.0  
+move right → x=0.0 y=1.0 yaw=0.0  
+move left → x=0.0 y=-1.0 yaw=0.0  
+turn right → x=0.0 y=0.0 yaw=1.0  
+turn left → x=0.0 y=0.0 yaw=-1.0  
+
+
+RULE 2: SPEED UP / FASTER (USING MEMORY)
+
+If the user uses ANY word or phrase that implies increasing speed or moving faster,
+for example:
+
+"faster", "speed up", "go faster", "run", "sprint", "hurry", 
+"move quickly", "pick up the pace", "accelerate", "go quicker"
+
+Behavior:
+
+- STRICTLY KEEP the previous values of x, y, and yaw.
+- Increase speed level by one step:
+
+slow → medium → fast
+
+- Update gait based on speed:
+
+slow = walk  
+medium = trot  
+fast = crawl
+
+- If speed is already "fast", keep it at "fast".
+
+
+
+RULE 3: SLOW DOWN / SLOWER (USING MEMORY)
+
+If the user uses ANY word or phrase that implies decreasing speed or moving slower,
+for example:
+
+"slower", "slow down", "go slow", "take it slow", 
+"be careful", "easy", "steady", "calm down", 
+"reduce speed", "move gently"
+
+Behavior:
+
+- STRICTLY KEEP the previous values of x, y, and yaw.
+- Decrease speed level by one step:
+
+fast → medium → slow
+
+- Update gait based on speed.
+
+- If speed is already "slow", keep it at "slow".
+
+
+RULE 4: STOP COMMAND
+
+If the user says:
+"stop", "halt", "freeze", "wait"
+
+Set:
+
+x = 0.0  
+y = 0.0  
+yaw = 0.0  
+speed = "slow"  
+gait = "walk"  
+stance = "stand"  
+mode = "ACTIVE"
+
+
+RULE 5: STANCE CONTROL
+
+If user says:
+
+"sit", "sit down", "rest", "take a break"
+
+Set:
+
+stance = "sit"  
+x = 0.0  
+y = 0.0  
+yaw = 0.0
+
+
+If user says:
+
+"stand", "stand up", "ready"
+
+Set:
+
+stance = "stand"
+
+
+RULE 6: UNKNOWN OR NON-ROBOT COMMANDS (IGNORE)
+
+If the user says something conversational or unrelated:
+
+Examples:
+"hello"
+"how are you"
+"what is this"
+
+Behavior:
+
+1. DO NOT reset movement.
+2. DO NOT change any state.
+3. EXACTLY copy the previous robot state.
+
+Meaning:
+x, y, yaw, speed, gait, stance, and mode must remain unchanged.
+
+
+EXAMPLES
+
+User: "move forward"
+
+Output:
+{"x":1.0,"y":0.0,"yaw":0.0,"speed":"slow","gait":"walk","stance":"stand","mode":"ACTIVE"}
+
+
+User: "faster" (previous was forward/slow)
+
+Output:
+{"x":1.0,"y":0.0,"yaw":0.0,"speed":"medium","gait":"trot","stance":"stand","mode":"ACTIVE"}
+
+
+User: "move right"
+
+Output:
+{"x":0.0,"y":1.0,"yaw":0.0,"speed":"slow","gait":"walk","stance":"stand","mode":"ACTIVE"}
+
+
+User: "hello how are you"
+
+Output:
+Keep the previous robot state unchanged.
+"""
+
+    user_prompt = f"""
+    LAST ROBOT STATE:
+    - Direction: x={current_robot_state['x']}, y={current_robot_state['y']}, yaw={current_robot_state['yaw']}
+    - Speed Level: {current_robot_state['speed']}
+    
+    NEW USER COMMAND: '{text_command}'
+    """
+
+
+    try:
+        # ⏱️ Start the stopwatch
+        start_time = time.time() 
+        
+        response = await client.chat.completions.create(
+            model="meta-llama/llama-3.1-8b-instruct", 
+            messages=[
+                {"role": "system", "content": system_rules},
+                {"role": "user", "content": user_prompt}
+            ],
+            temperature=0,
+            max_tokens=70 # 📏 Strict limit to force an immediate stop
+        )
+        
+        # ⏱️ Stop the stopwatch
+        end_time = time.time() 
+        latency = end_time - start_time
+        print(f"⏱️ Model Latency: {latency:.2f} seconds")
+
+        
+        raw_content = response.choices[0].message.content.strip()
+        raw_dict = json.loads(raw_content.replace("```json", "").replace("```", ""))
+        validated_command = LLMCommand(**raw_dict)
+        
+        # 💾 Save state and publish
+        current_robot_state = validated_command.model_dump()
+        
+        if ros_node:
+            
+            ros_node.publish_movement(current_robot_state)
+            
+        return {"status": "success", "data": current_robot_state}
+
+    except Exception as e:
+        print(f"❌ Error: {str(e)}")
+        return {"status": "error", "detail": str(e)}
+
+def ros_spin_thread():
+    rclpy.spin(ros_node)
+
+def main(args=None):
+    global ros_node
+    rclpy.init(args=args)
+    ros_node = AINode()
+    thread = threading.Thread(target=ros_spin_thread, daemon=True)
+    thread.start()
+    uvicorn.run(app, host="0.0.0.0", port=5000)
+    rclpy.shutdown()
+
+if __name__ == '__main__':
+    main()
+
+    

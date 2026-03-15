@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/robonex_hardware/robonex_hardware.egg-info
+writing ../../build/robonex_hardware/robonex_hardware.egg-info/PKG-INFO
+writing dependency_links to ../../build/robonex_hardware/robonex_hardware.egg-info/dependency_links.txt
+writing entry points to ../../build/robonex_hardware/robonex_hardware.egg-info/entry_points.txt
+writing requirements to ../../build/robonex_hardware/robonex_hardware.egg-info/requires.txt
+writing top-level names to ../../build/robonex_hardware/robonex_hardware.egg-info/top_level.txt
+writing manifest file '../../build/robonex_hardware/robonex_hardware.egg-info/SOURCES.txt'
+reading manifest file '../../build/robonex_hardware/robonex_hardware.egg-info/SOURCES.txt'
+writing manifest file '../../build/robonex_hardware/robonex_hardware.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/abhinav/Desktop/roboControl/build/robonex_hardware/build
+creating /home/abhinav/Desktop/roboControl/build/robonex_hardware/build/lib
+creating /home/abhinav/Desktop/roboControl/build/robonex_hardware/build/lib/robonex_hardware
+copying robonex_hardware/hardware_node.py -> /home/abhinav/Desktop/roboControl/build/robonex_hardware/build/lib/robonex_hardware
+copying robonex_hardware/__init__.py -> /home/abhinav/Desktop/roboControl/build/robonex_hardware/build/lib/robonex_hardware
+running install
+running install_lib
+creating /home/abhinav/Desktop/roboControl/install/robonex_hardware/lib/python3.12/site-packages/robonex_hardware
+copying /home/abhinav/Desktop/roboControl/build/robonex_hardware/build/lib/robonex_hardware/hardware_node.py -> /home/abhinav/Desktop/roboControl/install/robonex_hardware/lib/python3.12/site-packages/robonex_hardware
+copying /home/abhinav/Desktop/roboControl/build/robonex_hardware/build/lib/robonex_hardware/__init__.py -> /home/abhinav/Desktop/roboControl/install/robonex_hardware/lib/python3.12/site-packages/robonex_hardware
+byte-compiling /home/abhinav/Desktop/roboControl/install/robonex_hardware/lib/python3.12/site-packages/robonex_hardware/hardware_node.py to hardware_node.cpython-312.pyc
+byte-compiling /home/abhinav/Desktop/roboControl/install/robonex_hardware/lib/python3.12/site-packages/robonex_hardware/__init__.py to __init__.cpython-312.pyc
+running install_data
+creating /home/abhinav/Desktop/roboControl/install/robonex_hardware/share/ament_index
+creating /home/abhinav/Desktop/roboControl/install/robonex_hardware/share/ament_index/resource_index
+creating /home/abhinav/Desktop/roboControl/install/robonex_hardware/share/ament_index/resource_index/packages
+copying resource/robonex_hardware -> /home/abhinav/Desktop/roboControl/install/robonex_hardware/share/ament_index/resource_index/packages
+copying package.xml -> /home/abhinav/Desktop/roboControl/install/robonex_hardware/share/robonex_hardware
+running install_egg_info
+Copying ../../build/robonex_hardware/robonex_hardware.egg-info to /home/abhinav/Desktop/roboControl/install/robonex_hardware/lib/python3.12/site-packages/robonex_hardware-0.0.0-py3.12.egg-info
+running install_scripts
+Installing robot_hardware script to /home/abhinav/Desktop/roboControl/install/robonex_hardware/lib/robonex_hardware
+writing list of installed files to '/home/abhinav/Desktop/roboControl/build/robonex_hardware/install.log'

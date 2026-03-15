@@ -1,0 +1,21 @@
+[2.126s] Invoking command in '/home/abhinav/Desktop/roboControl/src/robonex_ai': PYTHONPATH=/home/abhinav/Desktop/roboControl/build/robonex_ai/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/abhinav/Desktop/roboControl/install/robonex_ai/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robonex_ai build --build-base /home/abhinav/Desktop/roboControl/build/robonex_ai/build install --record /home/abhinav/Desktop/roboControl/build/robonex_ai/install.log --single-version-externally-managed install_data
+[2.527s] running egg_info
+[2.557s] writing ../../build/robonex_ai/robonex_ai.egg-info/PKG-INFO
+[2.558s] writing dependency_links to ../../build/robonex_ai/robonex_ai.egg-info/dependency_links.txt
+[2.558s] writing entry points to ../../build/robonex_ai/robonex_ai.egg-info/entry_points.txt
+[2.558s] writing requirements to ../../build/robonex_ai/robonex_ai.egg-info/requires.txt
+[2.558s] writing top-level names to ../../build/robonex_ai/robonex_ai.egg-info/top_level.txt
+[2.611s] reading manifest file '../../build/robonex_ai/robonex_ai.egg-info/SOURCES.txt'
+[2.613s] writing manifest file '../../build/robonex_ai/robonex_ai.egg-info/SOURCES.txt'
+[2.613s] running build
+[2.613s] running build_py
+[2.613s] running install
+[2.625s] running install_lib
+[2.655s] running install_data
+[2.656s] running install_egg_info
+[2.683s] removing '/home/abhinav/Desktop/roboControl/install/robonex_ai/lib/python3.12/site-packages/robonex_ai-0.0.0-py3.12.egg-info' (and everything under it)
+[2.684s] Copying ../../build/robonex_ai/robonex_ai.egg-info to /home/abhinav/Desktop/roboControl/install/robonex_ai/lib/python3.12/site-packages/robonex_ai-0.0.0-py3.12.egg-info
+[2.685s] running install_scripts
+[2.941s] Installing ai_server script to /home/abhinav/Desktop/roboControl/install/robonex_ai/lib/robonex_ai
+[2.942s] writing list of installed files to '/home/abhinav/Desktop/roboControl/build/robonex_ai/install.log'
+[3.004s] Invoked command in '/home/abhinav/Desktop/roboControl/src/robonex_ai' returned '0': PYTHONPATH=/home/abhinav/Desktop/roboControl/build/robonex_ai/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/abhinav/Desktop/roboControl/install/robonex_ai/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robonex_ai build --build-base /home/abhinav/Desktop/roboControl/build/robonex_ai/build install --record /home/abhinav/Desktop/roboControl/build/robonex_ai/install.log --single-version-externally-managed install_data
